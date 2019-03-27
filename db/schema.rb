@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_014058) do
+ActiveRecord::Schema.define(version: 2019_03_27_073828) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text"
+    t.bigint "issue_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_answers_on_issue_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +28,38 @@ ActiveRecord::Schema.define(version: 2019_03_27_014058) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "text", null: false
+    t.string "large_tag", null: false
+    t.string "middle_tag"
+    t.string "small_tag"
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_issues_on_group_id"
+    t.index ["user_id"], name: "index_issues_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_likes_on_issue_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_stocks_on_issue_id"
+    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -34,5 +76,13 @@ ActiveRecord::Schema.define(version: 2019_03_27_014058) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "issues"
+  add_foreign_key "answers", "users"
   add_foreign_key "groups", "users"
+  add_foreign_key "issues", "groups"
+  add_foreign_key "issues", "users"
+  add_foreign_key "likes", "issues"
+  add_foreign_key "likes", "users"
+  add_foreign_key "stocks", "issues"
+  add_foreign_key "stocks", "users"
 end
