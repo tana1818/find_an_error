@@ -1,0 +1,75 @@
+%heaedr.header.clearfix
+  .header__content.clearfix
+
+    .header__content__logo
+      = link_to root_path, class: "blue" do
+        = image_tag "umihebi.png"
+        %h3.pyonpyon うみへび
+
+    .header__right
+      .menu
+        %ul
+          %li
+            %input.header__right__textfield{:name => "nickname", :placeholder => "キーワードから探す", :type => "text"}
+          %li
+            = link_to "#", class: "btn" do
+              %span
+                = fa_icon('file')
+              ストック
+          %li
+            = link_to "#", class: "btn" do
+              %span
+                = fa_icon('pencil')
+              投稿する
+          %li
+            = link_to "#", class: "btn" do
+              %span
+                = fa_icon('bell')
+              ０
+
+      .icon
+        = link_to "#" do
+          = image_tag "umihebi.png"
+
+.issues.clearfix
+  .issues__navi
+    %ul
+      %li.issues__navi__list
+        = link_to "#", class: "issue__navi__list-link" do
+          = fa_icon('line-chart')
+          トレンド
+      %li.issues__navi__list
+        = link_to "#", class: "issue__navi__list-link" do
+          = fa_icon('list')
+          タイムライン
+      %li.issues__navi__list
+        = link_to "#", class: "issue__navi__list-link" do
+          = fa_icon('tags')
+          タグフィード
+      %li.issues__navi__list
+        = link_to "#", class: "issue__navi__list-link" do
+          = fa_icon('star')
+          マイルストーン
+
+
+  .issues__main
+    .issues__main__top
+      .issues__main__top__title
+        .issues__main__top__title__left
+          %span
+            = fa_icon('line-chart')
+          %span トレンド
+        .issues__main__top__title__right
+          %p 最近人気の記事を表示
+
+      .issues__main__top__date
+        = link_to "#" do
+          １日
+        = link_to "#" do
+          週間
+        = link_to "#" do
+          月間
+
+    = render 'issues__item-box'
+
+  .issues__ranking
