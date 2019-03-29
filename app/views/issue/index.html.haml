@@ -2,9 +2,9 @@
   .header__content.clearfix
 
     .header__content__logo
-      = link_to root_path, class: "blue" do
+      = link_to root_path, class: "white" do
         = image_tag "umihebi.png"
-        %h3.pyonpyon うみへび
+        %h3.pyonpyon eeigel
 
     .header__right
       .menu
@@ -72,4 +72,6 @@
 
     = render 'issues__item-box'
 
-  .issues__ranking
+  = render 'issues__user-ranking'
+
+  = render 'issues__group-ranking'
