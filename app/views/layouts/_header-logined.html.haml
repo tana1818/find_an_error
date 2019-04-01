@@ -1,0 +1,60 @@
+%heaedr.header
+  .header__content.clearfix
+
+    .header__content__logo
+      = link_to root_path, class: "white" do
+        = image_tag "umihebi.png"
+        %h3.pyonpyon eeigel
+
+    .header__right
+      .menu
+        %ul
+          %li
+            %input.header__right__textfield{:name => "nickname", :placeholder => "キーワードから探す", :type => "text"}
+          %li
+            = link_to "#", class: "btn" do
+              %span
+                = fa_icon('file')
+              ストック
+          %li
+            = link_to "#", class: "btn" do
+              %span
+                = fa_icon('pencil')
+              投稿する
+          %li
+            .btn.info
+              %span
+                = fa_icon('bell')
+              ０
+            .info-menu
+              .info-menu__top.clearfix
+                .info-menu__top__left
+                  %span
+                    = fa_icon('bell-o')
+                    お知らせ
+                .info-menu__top__right
+                  = link_to "通知設定", "#"
+              .info-menu__content.clearfix
+              .info-menu__bottom
+                = link_to "通知一覧をみる", "#"
+
+      .icon
+        = image_tag "umihebi.png"
+        %i
+          = fa_icon 'caret-down', class: "caret-down"
+        %ul.user-menu.inline
+          %li.user-menu__item
+            = link_to "#" do
+              マイページ
+          %li.user-menu__item
+            = link_to "#" do
+              下書き一覧
+          %li.user-menu__item
+            = link_to "#" do
+              設定
+          %li.user-menu__item
+            = link_to "#" do
+              ヘルプ
+          %li.user-menu__item
+            = link_to "#" do
+              ログアウト

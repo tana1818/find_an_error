@@ -1,0 +1,134 @@
+.header {
+  // background-color: rgb(245, 245, 245);
+  height: 100px;
+  width: 100%;
+  // background-color: red;
+  &__content {
+    background-color: $blue;
+    &__logo {
+      disply: inline-block;
+      padding: 20px;
+      float: left;
+    }
+    h3 {
+      float:right;
+      // text-align: center;
+    }
+    img {
+      width: 36px;
+      text-align: center;
+      float:left;
+    }
+  }
+  &__right {
+    padding: 20px 80px 20px 20px;
+    float: right;
+    .menu {
+      float:left;
+    }
+    &__textfield {
+      height: 34px;
+      width: 300px;
+    }
+    ul {
+      li {
+        margin-left: 10px;
+        display: inline-block;
+        font-size: 14px;
+      }
+    }
+    .icon {
+      margin-left: 15px;
+      display: inline-block;
+      float:right;
+      cursor: pointer;
+      img {
+        width: 33px;
+        background-color: $white;
+        border-radius: 3px;
+      }
+      i {
+        margin: 4px 6px 0 2px;
+        float: left;
+      }
+    }
+    .icon.open img{
+      color: #fff;
+      f.caret-down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.info {
+  cursor: pointer;
+  font-size: 15px;
+  &-menu {
+    display: none;
+    width: 275px;
+    height: 350px;
+    padding: 15px 0;
+    background: $gray;
+    border-radius: 3px;
+    position: absolute;
+    top: 56px;
+    right: 106px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
+    &__top {
+      padding: 0 16px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: $black;
+      &__left {
+        float: left;
+      }
+      &__right {
+        float:right;
+        a {
+          color: $black;
+        }
+      }
+    }
+    &__content {
+      height: 278px;
+    }
+    &__bottom {
+      text-align: center;
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+.user-menu {
+  display: none;
+  width: 135px;
+  padding:0;
+  background: $gray;
+  position: absolute;
+  top:56px;
+  right:19px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
+  li.user-menu__item{
+    width: 135px;
+    border-bottom: 1px solid #bebaba;
+    margin: 0;
+  }
+}
+
+.user-menu a {
+  display: block;
+  color: #727272;
+  font-size: 13px;
+  padding: 20px;
+  // transition: all 0.4s ease-out;
+  // width: 100%;
+  &:hover {
+    background-color: #CDDC39;
+    color: #fff;
+    width: 135px;
+  }
+}
