@@ -1,35 +1,4 @@
-%heaedr.header.clearfix
-  .header__content.clearfix
-
-    .header__content__logo
-      = link_to root_path, class: "white" do
-        = image_tag "umihebi.png"
-        %h3.pyonpyon eeigel
-
-    .header__right
-      .menu
-        %ul
-          %li
-            %input.header__right__textfield{:name => "nickname", :placeholder => "キーワードから探す", :type => "text"}
-          %li
-            = link_to "#", class: "btn" do
-              %span
-                = fa_icon('file')
-              ストック
-          %li
-            = link_to "#", class: "btn" do
-              %span
-                = fa_icon('pencil')
-              投稿する
-          %li
-            = link_to "#", class: "btn" do
-              %span
-                = fa_icon('bell')
-              ０
-
-      .icon
-        = link_to "#" do
-          = image_tag "umihebi.png"
+= render 'layouts/header-logined'
 
 .issues.clearfix
   .issues__navi
