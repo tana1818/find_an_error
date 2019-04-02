@@ -10,7 +10,7 @@
       .menu
         %ul
           %li
-            %input.header__right__textfield{:name => "nickname", :placeholder => "キーワードから探す", :type => "text"}
+            %input.header__right__textfield{:name => "keyword", :placeholder => "キーワードから探す", :type => "text"}
           %li
             = link_to "#", class: "btn" do
               %span
@@ -56,5 +56,4 @@
             = link_to "#" do
               ヘルプ
           %li.user-menu__item
-            = link_to "#" do
-              ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete

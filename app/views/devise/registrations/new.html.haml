@@ -1,0 +1,41 @@
+.signup
+  .signup__header
+    .signup__header-logo
+      = link_to root_path, class: "white" do
+        = image_tag "umihebi.png"
+        %h3.pyonpyon eeigel
+      %ul
+        %li
+          %input.header__right__textfield{:name => "keyword", :placeholder => "キーワードから探す", :type => "text"}
+  .signup__content
+    .signup__content-left
+      %h3 Let's find an error!
+      %p Seeigelは日常の問題を投稿して共有するアプリです
+      %p 経験したことを投稿して
+      %p 問題解決にかかる時間を少なくしよう！
+    .signup__content-right
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          .field-label
+            = f.label :name, "名前（6文字以下）"
+          .field-input
+            = f.text_field :name, autofocus: true, maxlength: 6
+        .field
+          .field-label
+            = f.label :email, 'メールアドレス'
+          .field-input
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          .field-label
+            = f.label :password, 'パスワード（６文字以上）'
+          .field-input
+            = f.password_field :password, autocomplete: "new-password"
+        .field
+          .field-label
+            = f.label :password_confirmation, '確認用パスワード'
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+        .actions
+          = f.submit "登録する"
+      = render "devise/shared/links"

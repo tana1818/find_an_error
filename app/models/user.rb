@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :stocks
   has_many :likes
   has_many :issues
+
+  validates :name, presence: true
+  validates :password, length:{maximum: 20}
 end
