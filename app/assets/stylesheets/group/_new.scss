@@ -1,0 +1,61 @@
+.group {
+  width: 100vw;
+  height:100vh;
+  &-content {
+    width: 55%;
+    height: 60%;
+    background: $white;
+    margin: 100px auto;
+  }
+  &__title {
+    height: 50px;
+    background: $gray;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid $white;
+    &-new {
+      float:left;
+      width: 33%;
+      padding: 15px;
+    }
+    &-edit {
+      float:left;
+      width: 34%;
+      padding: 15px;
+    }
+    &-favorite {
+      float:left;
+      width: 33%;
+      padding: 15px;
+    }
+  }
+  &__first {
+    padding: 30px 60px;
+  }
+  &-form {
+    margin-left: 100px;
+    height: 56px;
+    &__left {
+      float: left;
+      font-size: 19px;
+      width: 110px;
+      margin-top: 15px;
+    }
+    &__right {
+      float: left;
+      &-area {
+        width: 320px;
+        height: 45px;
+      }
+    }
+    &-btn {
+      text-align: center;
+    }
+  }
+}
+
+// .target:target {
+//   background-color: red;
+// }

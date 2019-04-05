@@ -1,0 +1,23 @@
+= render 'layouts/header-logined'
+= form_for @group, url: group_index_path, class: "group__first" do |t|
+  .group
+    .group-content
+      .group__title
+        .group__title-new.target 新規グループ作成
+        .group__title-edit.target グループ編集
+        .group__title-favorite.target マイグループ
+      .group__first
+        .group-form
+          .group-form__left
+            = t.label :name, 'グループ名'
+          .group-form__right
+            = t.text_field :name,class: "group-form__right-area", placeholder: "グループ名を入力してください"
+
+        .group-form
+          .group-form__left
+            = t.label :password, 'パスワード'
+          .group-form__right
+            = t.password_field :password,class: "group-form__right-area",placeholder: "6文字以上10文字以内"
+
+        .group-form-btn
+          = t.submit "登録", class: "btn"
