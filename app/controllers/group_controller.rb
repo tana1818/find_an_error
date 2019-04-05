@@ -3,11 +3,12 @@ class GroupController < ApplicationController
 
   def new
     @group = Group.new
+    @my_group = Group.where(user_id: current_user.id)
   end
 
   def create
     Group.create(name: group_params[:name],password: group_params[:password], user_id: current_user.id)
-    redirect_to root_path
+    redirect_to new_group_path
   end
 
   def favorite_group

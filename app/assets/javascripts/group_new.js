@@ -6,6 +6,7 @@ $(function(){
       $('.group__title-edit').css('background-color','rgb(245, 245, 245)');
       $('.group__title-favorite').css('background-color','rgb(245, 245, 245)');
       $('.group__first').css('display','block');
+      $('.group__second').css('display','none');
     });
   });
 
@@ -24,6 +25,7 @@ $(function(){
       $('.group__title-new').css('background-color','rgb(245, 245, 245)');
       $('.group__title-edit').css('background-color','rgb(245, 245, 245)');
       $('.group__first').css('display','none');
+      $('.group__second').css('display','block');
     });
   });
 

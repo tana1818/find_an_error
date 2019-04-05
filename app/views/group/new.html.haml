@@ -6,18 +6,39 @@
         .group__title-new.target 新規グループ作成
         .group__title-edit.target グループ編集
         .group__title-favorite.target マイグループ
-      .group__first
-        .group-form
-          .group-form__left
-            = t.label :name, 'グループ名'
-          .group-form__right
-            = t.text_field :name,class: "group-form__right-area", placeholder: "グループ名を入力してください"
+      .group-content__form
+        .group__first
+          .group-form
+            .group-form__left
+              = t.label :name, 'グループ名'
+            .group-form__right
+              = t.text_field :name,class: "group-form__right-area", placeholder: "グループ名を入力してください"
 
-        .group-form
-          .group-form__left
-            = t.label :password, 'パスワード'
-          .group-form__right
-            = t.password_field :password,class: "group-form__right-area",placeholder: "6文字以上10文字以内"
+          .group-form
+            .group-form__left
+              = t.label :password, 'パスワード'
+            .group-form__right
+              = t.password_field :password,class: "group-form__right-area",placeholder: "6文字以上10文字以内"
 
-        .group-form-btn
-          = t.submit "登録", class: "btn"
+          .group-form-btn
+            = t.submit "登録", class: "btn"
+
+        .group__second
+          .group-show
+            - @my_group.each do |p|
+              .issues__main__item
+                =link_to "#" do
+                  = image_tag "umihebi.png", class: "issues__main__item__user-image"
+                .issues__main__item__right
+                  .issues__main__item__right-title
+                    = link_to "#" do
+                      = p.name
+                  .issues__main__item__right-info
+                    .right-info__user.inline
+                      作成者：
+                      %span
+                        = link_to "#" do
+                          = p.user.name
+                    .right-info__time.inline
+                      %span 作成日：
+                      = time_ago_in_words(p.created_at)
