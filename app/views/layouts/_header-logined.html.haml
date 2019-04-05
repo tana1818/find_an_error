@@ -16,11 +16,18 @@
               %span
                 = fa_icon('file')
               ストック
-          %li
-            = link_to "#", class: "btn" do
-              %span
-                = fa_icon('pencil')
-              投稿する
+
+          .btn.tweet
+            %span
+              = fa_icon('pencil')
+            投稿する
+            %ul.tweet-menu.inline
+              %li.tweet-menu__item
+                = link_to new_group_path do
+                  グループ
+              %li.tweet-menu__item
+                = link_to "#" do
+                  個人
           %li
             .btn.info
               %span
