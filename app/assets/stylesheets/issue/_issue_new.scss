@@ -1,0 +1,87 @@
+.issue__new {
+  &-content {
+    width: 1200px;
+    height: 100vh;
+    margin: 20px auto;
+    background: $white;
+    &-left {
+      width: 77%;
+      float: left;
+      padding: 20px;
+      &__top {
+        border-bottom: 1px solid $gray;
+        margin-bottom: 13px;
+        p {
+          float: left;
+          font-size: 13px;
+          margin-left: 30px;
+          border-bottom: 3px solid $blue;
+        }
+      }
+      &__title {
+        &-logo {
+          width: 100%;
+        }
+      }
+    }
+    &-nav {
+      width: 3%;
+      float: left;
+      font-size: 20px;
+      color: $font_gray;
+      margin-top: 20px;
+      ul {
+        li {
+          margin-top: 20px;
+        }
+        li:hover {
+          color: $blue;
+          cursor: pointer;
+        }
+      }
+    }
+    &-right {
+      width: 20%;
+      float: left;
+      border-left: 1px solid $gray;
+      height: 100%;
+      &__title {
+        font-size: 25px;
+        font-weight: 600;
+        padding: 10px;
+      }
+      &__list {
+        &-btn {
+          background: $blue;
+          color: $white;
+          padding: 8px;
+          font-weight: bold;
+          cursor: pointer;
+          opacity: 0.8;
+        }
+        &-btn:hover {
+          opacity: 1;
+        }
+        &-search {
+          margin-bottom: 10px;
+          padding: 0 6px;
+        }
+        &-new {
+          padding: 6px;
+          display: none;
+        }
+      }
+      &__category {
+        .large-category {
+          padding: 8px;
+          font-size: 13px;
+          border-bottom: 1px solid $gray;
+        }
+        .large-category:hover {
+          background: $gray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

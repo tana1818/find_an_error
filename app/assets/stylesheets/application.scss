@@ -4,6 +4,7 @@
 @import 'config/common';
 @import 'user/signup';
 @import 'layouts/header';
-@import 'issue';
+@import 'issue/index';
+@import 'issue/issue_new';
 @import 'group/new';
 @import 'like';
