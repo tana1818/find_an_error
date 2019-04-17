@@ -1,0 +1,74 @@
+= render 'layouts/header-logined'
+
+.issue__new
+  .issue__new-content
+    .issue__new-content-left
+      .issue__new-content-left__top.clearfix
+        %p 見たまま
+        %p HTML
+        %p プレビュー
+      .issue__new-content-left__title
+        = text_field :name, class: "issue__new-content-left__title-logo", placeholder: "タイトル"
+      .issue__new-content-left__category
+        大カテ＞
+        中カテ＞
+        小カテ
+      .issue__new-content-left__text
+        = text_field :text, placeholder: "本文"
+    .issue__new-content-nav
+      %ul
+        %li
+          = fa_icon('folder')
+        %li
+          = fa_icon('picture-o')
+        %li
+          = fa_icon('cog')
+        %li
+          = fa_icon('file')
+        %li
+          = fa_icon('plus')
+
+    = form_for [@group, @category], url: group_category_index_path do |c|
+      .issue__new-content-right
+        .issue__new-content-right__title 大カテゴリー
+        .issue__new-content-right__list
+          .issue__new-content-right__list-search
+            = c.text_field :name, class: "issue__new-content-right__list-search-area", placeholder: "検索"
+          .issue__new-content-right__list-btn
+            %span
+              = fa_icon('plus')
+            新規作成
+          .issue__new-content-right__list-new
+            = c.text_field :name, class: "issue__new-content-right__list-new-area", placeholder: "カテゴリー名"
+            = c.hidden_field :division, :value => 1
+            .issue__new-content-right__list-new-btn
+              = c.submit "登録", class: "btn"
+
+        .issue__new-content-right__category
+          - if @large_categories
+            - @large_categories.each do |t|
+              = render partial: 'large__category-content', locals: {category_name: t.name, category_group: t.group.name}
+
+    = form_for [@group, @category2], url: group_category_index_path do |c|
+      .issue__new-content-right
+        .issue__new-content-right__title 中カテゴリー
+        .issue__new-content-right__list
+          .issue__new-content-right__list-search
+            = c.text_field :name, class: "issue__new-content-right__list-search-area", placeholder: "検索"
+          .issue__new-content-right__list-btn
+            %span
+              = fa_icon('plus')
+            新規作成
+          .issue__new-content-right__list-new
+            = c.text_field :name, class: "issue__new-content-right__list-new-area", placeholder: "カテゴリー名"
+            = c.hidden_field :division, :value => 2
+            -# = c.hidden_field :parent_id, :value => ? #ここに大カテゴリーのidを取得
+            .large-category__id
+
+            .issue__new-content-right__list-new-btn
+              = c.submit "登録", class: "btn"
+
+        .issue__new-content-right__category
+          - if @middle_categories
+            - @middle_categories.each do |t|
+              = render partial: 'middle__category-content', locals: {category_name: t.name, category_group: t.group.name}

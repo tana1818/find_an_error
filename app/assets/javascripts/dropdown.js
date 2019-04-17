@@ -1,11 +1,11 @@
-$(function() {
+$(document).on('turbolinks:load',function(){
 
 ////////////////////////////////////////////////////////////////////////////////
 //トップページドロップダウンメニュー
 ////////////////////////////////////////////////////////////////////////////////
 
   $(function() {
-    $('.icon').click(function(){
+    $('.icon').hover(function(){
       $('.user-menu').fadeToggle(300);
     });
   });
@@ -16,6 +16,11 @@ $(function() {
     });
   });
 
+  $(function() {
+    $('.tweet').hover(function(){
+      $('.tweet-menu').fadeToggle(300);
+    });
+  });
 
 });
 

@@ -77,7 +77,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 
 gem 'haml-rails', '~> 1.0'
@@ -91,3 +91,4 @@ gem 'fog-aws'
 gem 'jquery-rails'
 gem 'active_hash'
 gem 'dotenv-rails'
+gem 'acts_as_tree'

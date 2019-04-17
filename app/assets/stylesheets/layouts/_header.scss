@@ -117,18 +117,50 @@
     border-bottom: 1px solid #bebaba;
     margin: 0;
   }
+  a {
+    display: block;
+    color: #727272;
+    font-size: 13px;
+    padding: 20px;
+    &:hover {
+      background-color: #CDDC39;
+      color: #fff;
+      width: 135px;
+    }
+  }
 }
 
-.user-menu a {
-  display: block;
-  color: #727272;
-  font-size: 13px;
-  padding: 20px;
-  // transition: all 0.4s ease-out;
-  // width: 100%;
-  &:hover {
-    background-color: #CDDC39;
-    color: #fff;
+.tweet {
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 15px;
+  display: inline-block;
+  // float: left;
+  &-menu {
+    display: none;
     width: 135px;
+    padding:0;
+    background: $gray;
+    position: absolute;
+    top:53px;
+    right:214px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
+    li.tweet-menu__item{
+      width: 135px;
+      border-bottom: 1px solid #bebaba;
+      margin: 0;
+    }
+    a {
+      display: block;
+      color: #727272;
+      font-size: 13px;
+      padding: 20px;
+      &:hover {
+        background-color: #CDDC39;
+        color: #fff;
+        width: 135px;
+      }
+    }
   }
 }
