@@ -1,6 +1,6 @@
 class CategoryController < ApplicationController
 
-  before_action :group_params
+  # before_action :group_params
 
   # def new
   # end
