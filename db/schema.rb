@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_073828) do
+ActiveRecord::Schema.define(version: 2019_04_13_064448) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2019_03_27_073828) do
     t.datetime "updated_at", null: false
     t.index ["issue_id"], name: "index_answers_on_issue_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "parent_id"
+    t.bigint "group_id"
+    t.integer "division", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_categories_on_group_id"
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_073828) do
 
   add_foreign_key "answers", "issues"
   add_foreign_key "answers", "users"
+  add_foreign_key "categories", "groups"
   add_foreign_key "groups", "users"
   add_foreign_key "issues", "groups"
   add_foreign_key "issues", "users"
