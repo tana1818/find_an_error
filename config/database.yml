@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: find_an_error_production
-  username: find_an_error
+  username: root
   password: <%= ENV['FIND_AN_ERROR_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
