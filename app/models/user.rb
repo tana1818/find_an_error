@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :likes
   has_many :issues
 
+  #S3保存用に設定
+  has_one_attached :image
+
+  #サインアップ時の制限
   validates :name, presence: true
   validates :password, length:{maximum: 20}
 end
